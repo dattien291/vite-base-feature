@@ -1,0 +1,42 @@
+$colors: (
+  primary: $color-primary,
+  black: $black,
+  white: $white,
+);
+
+.ks-link {
+  @include flex-center-ver;
+  display: inline-block;
+  font-weight: $fw-semibold;
+
+  > .text {
+    position: relative;
+  }
+
+  &.-underline:hover {
+    text-decoration: underline;
+  }
+
+  &.-unset {
+    text-transform: unset;
+  }
+
+  &.-uppercase {
+    text-transform: uppercase;
+  }
+
+  &.-capitalize {
+    text-transform: capitalize;
+  }
+
+  @each $color, $value in $colors {
+    &.-#{$color} {
+      color: $value;
+    }
+  }
+
+  &.-hasIcon {
+    @include flex-center-ver;
+    gap: 6px;
+  }
+}

@@ -1,0 +1,19 @@
+$object-fit: (cover, contain, fill, none, scale-down);
+
+.ks-image {
+  @include square(100%);
+
+  @each $value in $object-fit {
+    &.-#{$value} {
+      object-fit: $value;
+    }
+  }
+
+  &.-loading {
+    background: $white;
+  }
+
+  &.-circle {
+    border-radius: 50%;
+  }
+}
